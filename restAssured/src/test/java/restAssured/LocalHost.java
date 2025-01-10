@@ -9,6 +9,8 @@ import static org.hamcrest.Matchers.*;
 
 import org.json.simple.JSONObject;
 
+
+//start json server-> json-server --watch db.json
 public class LocalHost {
 	@Test(enabled=false)
 	public void get() {

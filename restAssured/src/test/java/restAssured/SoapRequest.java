@@ -11,6 +11,7 @@ import java.io.IOException;
 import io.restassured.http.ContentType;
 import io.restassured.internal.util.IOUtils;
 import io.restassured.response.Response;
+import static org.hamcrest.Matchers.equalTo;
 
 public class SoapRequest {
 	@Test
@@ -31,7 +32,9 @@ public class SoapRequest {
 			when().post("/SOAP.Demo.cls").
 
 			then()
-			.log().all();
+			.log().all().
+			and().
+			body("//*:GetByName.name",equalTo("name"));
 	}
 
 }
